@@ -18,7 +18,7 @@
 		  	</div>
 
 		 	<div class="form-group">
-			    <label for="body">Body</label>
+			    <label for="body">Body:</label>
 			    <textarea id="body" name="body" class="form-control"></textarea>
 			</div>
 
