@@ -21,22 +21,19 @@ class PostsController extends Controller
 
 	public function create()
     {
-    	return view('posts.create');
+        if (auth()->check())
+        {
+            return view('posts.create');
+        }
+
+        elseif (! auth()->check())
+        {
+          return view('sessions.create');
+        }
     }   
 
     public function store()
     {
-    	//		 //create a new post using the request data
-    	// $post = new Posts;
-
-    	// $post->title = request('title');
-    	// $post->body = request('body');
-
-    	// 		//save it to the database
-    	// $post->save();
-
-    	// 		//finally redirect to the homepage
-
     	$this->validate(request(),[
     		'title' => 'required',
     		'body' => 'required'
@@ -54,7 +51,7 @@ class PostsController extends Controller
     public function show(Posts $post)
     {
         return view('posts.show', compact('post'));
-    } 
+    }
 }
 
 

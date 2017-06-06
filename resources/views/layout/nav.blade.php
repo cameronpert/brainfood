@@ -6,6 +6,7 @@
           <a class="nav-link" href="#">Authors</a>
           <a class="nav-link" href="/posts/create">Create</a>
           <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="/tasks">To-Do List</a>
 
           @if (Auth::check())
             <a class="nav-link ml-auto" href="#">{{ Auth::user()->name }}</a>

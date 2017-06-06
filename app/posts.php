@@ -21,7 +21,7 @@ class posts extends Model
 			'posts_id' => $this->id,
 			'user_id' => auth()->id()
 	]);
-}
+	}
 
 
 }
