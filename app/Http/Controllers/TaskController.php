@@ -77,6 +77,17 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+
+    public function incompleteTask($id)
+    {
+        \DB::table('tasks')
+            ->where('id', $id)
+            ->update([
+                'completed' => 0,
+            ]);
+
+        return redirect('/tasks');
+    }
 }
 
 

@@ -10,7 +10,11 @@
 
         <a class="btn btn-outline-primary" href="/tasks/edit/{{ $task->id }}">Change Title</a>
         
-        <a class="btn btn-outline-primary" href="/tasks/complete/{{ $task->id }}">Mark Complete</a>
+        @if ( $task->completed )
+        	<a class="btn btn-outline-primary" href="/tasks/incomplete/{{ $task->id }}">Mark Incomplete</a>
+        @else
+        	<a class="btn btn-outline-primary" href="/tasks/complete/{{ $task->id }}">Mark Complete</a>
+        @endif
 
         <hr>
 

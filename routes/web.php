@@ -37,7 +37,7 @@ Route::get('/tasks/edit/{task}', 'TaskController@showUpdateTitle');
 Route::post('/tasks/edit/{task}', 'TaskController@UpdateTitle');
 Route::get('/tasks/complete/{task}', 'TaskController@completeTask');
 
-
+Route::get('/tasks/incomplete/{task}', 'TaskController@incompleteTask');
 
 
 

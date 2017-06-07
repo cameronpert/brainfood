@@ -34,21 +34,16 @@
 
 			<hr>
 
-			<div class="card">
-				<div class="card-block">
-					<form method="POST" action="/posts/{{ $post->id }}/comments/">
-					{{ csrf_field() }}
-						<div class="form-group">
-							<textarea name="body" placeholder="Your comment here." class="form-control"></textarea>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary">Add Comment</button>
-						</div>
-					</form>
+			@if (Auth::check())
 
-					@include('layout.error')
-				</div>
-			</div>
+            	@include('posts.comments')
+
+          	@elseif (! Auth::check())
+
+            	<h5>Please <a href="/login">Log In</a> to leave a comment.</h5>
+
+          	@endif
+
 		</div>
 
 	</div>
