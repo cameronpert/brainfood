@@ -3,7 +3,7 @@
         <nav class="nav blog-nav">
         
           <a class="nav-link active" href="/">Home</a>
-          <a class="nav-link" href="#">Authors</a>
+          <a class="nav-link" href="/authors">Authors</a>
           <a class="nav-link" href="/posts/create">Create</a>
           <a class="nav-link" href="#">About Us</a>
           <a class="nav-link" href="/tasks">To-Do List</a>

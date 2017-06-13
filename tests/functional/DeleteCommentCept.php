@@ -1,11 +1,8 @@
 <?php 
-
 $I = new FunctionalTester($scenario);
+$I->wantTo('add a comment and check it is there, then delete it');
 
 $I->amOnPage('/');
-$I->click('Manchester Bombing');
-$I->see('Please Log In to leave a comment.');
-
 $I->click('Login');
 $I->fillField('Email:', 'cameron.pert@go-software.co.uk');
 $I->fillField('Password:', 'bb25thjan!');
@@ -17,3 +14,8 @@ $I->click('Add Comment');
 
 $I->see('terrible');
 
+$I->click('Delete');
+
+$I->click('Manchester Bombing');
+
+$I->dontSee('terrible');

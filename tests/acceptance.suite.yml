@@ -4,9 +4,13 @@
 # Perform tests in browser using the WebDriver or PhpBrowser.
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
-actor: AcceptanceTester
+class_name: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
-        - \Helper\Acceptance
+        - WebDriver:
+            url: 'https://brainfood.dev/' # put your local url
+            browser: firefox
+        - Laravel5:
+            part: ORM
+            cleanup: false # can't wrap into transaction
+        - \Helper\Acceptance      

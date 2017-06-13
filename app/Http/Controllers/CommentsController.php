@@ -17,4 +17,11 @@ class CommentsController extends Controller
 
 		return back();
 	}
+
+	public function destroy(posts $post, $commentsid)
+    {
+        \DB::table('comments')->where('id', $commentsid)->delete();
+
+       return redirect('/posts');
+    }
 }

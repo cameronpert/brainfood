@@ -1,5 +1,6 @@
 <?php 
 $I = new FunctionalTester($scenario);
+$I->wantTo('add a comment and check it is there');
 
 $I->amOnPage('/');
 $I->click('Login');

@@ -7,17 +7,23 @@
 		<h1>{{ auth()->user()->name }}'s Tasks</h1><br>
 
     	@foreach ($tasks as $task)
-        	@if ($task->completed)
-        		<li class="list-group-item">
-                    <strike>{{ $task->title }}</strike>
-                    <a class ="ml-auto" href="/tasks/{{ $task->id }}">Edit</a>
-                </li>
-        	@else
-        		<li class="list-group-item">
-                    {{ $task->title }}
-                    <a class ="ml-auto" href="/tasks/{{ $task->id }}">Edit</a>
-                </li>
-        	@endif
+        	
+            @if(auth()->user()->id == $task->user_id)
+
+                @if ($task->completed)
+            		<li class="list-group-item">
+                        <strike>{{ $task->title }}</strike>
+                        <a class ="ml-auto" href="/tasks/{{ $task->id }}">Edit</a>
+                    </li>
+            	@else
+            		<li class="list-group-item">
+                        {{ $task->title }}
+                        <a class ="ml-auto" href="/tasks/{{ $task->id }}">Edit</a>
+                    </li>
+            	@endif
+
+            @endif
+            
         @endforeach
 
         <br><br>

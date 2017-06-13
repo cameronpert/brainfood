@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Posts;
 
+use App\User;
+
 class PostsController extends Controller
 {
     public function __construct()
@@ -51,6 +53,13 @@ class PostsController extends Controller
     public function show(Posts $post)
     {
         return view('posts.show', compact('post'));
+    }
+
+    public function authors(){
+
+        $users = User::get();
+        return view('author.index', compact('users'));
+
     }
 }
 
